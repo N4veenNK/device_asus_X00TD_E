@@ -9,14 +9,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common AEX stuff
+# Inherit some common ArcanaOS stuff
 $(call inherit-product, vendor/aosp/common.mk)
 
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Set Boot Animination Resolution
-TARGET_BOOT_ANIMATION_RES := 2140
+# Aosp Stuff with GApps
+TARGET_BOOT_ANIMATION_RES := 1080
+ARCANA_DEVICE := X00TD
+TARGET_SUPPORTS_BLUR := false
+TARGET_BUILD_GRAPHENEOS_CAMERA=false
+TARGET_GAPPS_ARCH := arm64
+WITH_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_X00TD
@@ -30,7 +35,11 @@ PRODUCT_GMS_CLIENTID_BASE := android-asus
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=ASUS_X00T \
     PRODUCT_NAME=WW_X00T \
-    PRIVATE_BUILD_DESC="sdm660_64-user 8.1.0 OPM1 1309 release-keys"
+    PRIVATE_BUILD_DESC="raven-user 12 SQ1D.220205.003 8069835 release-keys"
 
 # Build fingerprint
-BUILD_FINGERPRINT := "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys"
+BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220205.003/8069835:user/release-keys"
+
+# MAINTAINER STUFF
+ARCANA_MAINTAINER := Naveen
+ARCANA_OFFICIAL := true
