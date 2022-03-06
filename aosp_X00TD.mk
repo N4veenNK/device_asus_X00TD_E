@@ -19,10 +19,10 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 ARCANA_DEVICE := X00TD
 TARGET_SUPPORTS_BLUR := false
-TARGET_BUILD_GRAPHENEOS_CAMERA=false
+TARGET_BUILD_GRAPHENEOS_CAMERA := true
 TARGET_GAPPS_ARCH := arm64
 WITH_GAPPS := true
-COPY_APN_SYSTEM ?= true
+COPY_APN_SYSTEM := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_X00TD
