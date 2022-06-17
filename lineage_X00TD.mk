@@ -9,14 +9,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common ArcanaOS stuff
-$(call inherit-product, vendor/aosp/common.mk)
+# Inherit some common RiceDroid stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_X00TD
+PRODUCT_NAME := lineage_X00TD
 PRODUCT_DEVICE := X00TD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Zenfone Max Pro M1
@@ -32,20 +32,12 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Build fingerprint
 BUILD_FINGERPRINT := "google/raven/raven:12/SP2A.220405.004/8233519:user/release-keys"
 
-# Arcana Stuff
-ARCANA_DEVICE := X00TD
-COPY_APN_SYSTEM := true
-TARGET_BOOT_ANIMATION_RES := 1080
+# Rom flags
+RICE_MAINTAINER := Naveen
+RICE_OFFICIAL := false
+RICE_DEVICE := X00TD
+TARGET_ENABLE_BLUR := false
+TARGET_SUPPORTS_QUICK_TAP := true 
+TARGET_FACE_UNLOCK_SUPPORTED := true 
 TARGET_BUILD_GRAPHENEOS_CAMERA := false
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_BLUR := false
-TARGET_SUPPORTS_NOW_PLAYING := true
-TARGET_SUPPORTS_QUICK_TAP := true
-USE_PIXEL_CHARGER_IMAGES := true
-                                                              # Gapps
-WITH_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
-
-# MAINTAINER STUFF
-ARCANA_MAINTAINER := Naveen
-ARCANA_OFFICIAL := true
+TARGET_BOOT_ANIMATION_RES := 1080

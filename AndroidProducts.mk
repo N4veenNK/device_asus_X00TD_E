@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_X00TD.mk
+    $(LOCAL_DIR)/lineage_X00TD.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_X00TD-eng \
-    aosp_X00TD-user \
-    aosp_X00TD-userdebug
+    lineage_X00TD-eng \
+    lineage_X00TD-user \
+    lineage_X00TD-userdebug
